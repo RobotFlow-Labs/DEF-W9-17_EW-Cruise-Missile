@@ -1,0 +1,29 @@
+[simulation]
+steps = 40
+dt = 0.1
+seed = 7
+success_radius = 20.0
+initial_speed = 35.0
+deviation_reward_scale = 1.0
+resource_penalty_scale = 0.06
+
+[target]
+x = 500.0
+y = 0.0
+
+[environment]
+temperature_c = 42.0
+humidity = 0.6
+wind_speed = 4.0
+wind_dir_deg = 0.0
+
+[actions]
+levels = [0.0, 0.5, 1.0]
+
+[paper_targets]
+baseline_deviation_deg = 0.25
+multilayer_deviation_deg = 8.65
+baseline_success_pct = 92.7
+multilayer_success_pct = 31.5
+resource_delta_pct_min = 25.0
+resource_delta_pct_max = 30.0

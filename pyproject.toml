@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anima-ew-cruise-missile"
+version = "0.1.0"
+description = "ANIMA multi-layer EW/cyber/deception defense simulator for AI-guided cruise missiles"
+readme = "CLAUDE.md"
+requires-python = ">=3.11"
+authors = [{name = "AIFLOW LABS"}]
+dependencies = [
+  "numpy>=1.26",
+  "fastapi>=0.110",
+  "pydantic>=2.7",
+  "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+train = [
+  "torch>=2.3",
+]
+dev = [
+  "pytest>=8.0",
+  "httpx>=0.27",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anima_ew_cruise_missile"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  ew_cruise_missile:
+    build:
+      context: .
+      dockerfile: Dockerfile.serve
+    image: anima-ew-cruise-missile:0.1.0
+    ports:
+      - "8080:8080"
+    environment:
+      - PYTHONUNBUFFERED=1

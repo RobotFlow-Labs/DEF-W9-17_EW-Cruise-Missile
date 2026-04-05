@@ -1,0 +1,15 @@
+name: ew_cruise_missile
+version: 0.1.0
+domain: defense
+language: python
+entrypoints:
+  infer: python -m anima_ew_cruise_missile.infer --config configs/default.toml
+  eval: python -m anima_ew_cruise_missile.eval --config configs/paper.toml
+  serve: uvicorn anima_ew_cruise_missile.serve:app --host 0.0.0.0 --port 8080
+ros2:
+  node: ew_cruise_missile_defense_node
+  subscriptions:
+    - /anima/defense/threat_state
+    - /anima/defense/environment_state
+  publications:
+    - /anima/defense/interference_action
